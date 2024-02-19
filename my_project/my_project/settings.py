@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'shop_app',
-    
+    'myapp4',
+
 ]
 
 MIDDLEWARE = [
@@ -123,3 +124,57 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'simple': {
+            'format': '%(levelmane)s %(message)s'
+        },
+        'verbose': {
+            'format': '{levelname} {asctime} {module} {process} {thread} {message}',
+            'style': '{',
+        },
+    },
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+            'formatter': 'verbose',
+        },
+        'file': {
+            'class': 'logging.FileHandler',
+            'filename': './log/django.log',
+            'formatter': 'verbose',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console', 'file'],
+            'level': 'INFO',
+        },
+        'myapp': {
+            # 'handlers': ['console'],
+            'handlers': ['console', 'file'],
+            'level': 'DEBUG',
+            'propagate': True
+        },
+    },
+}
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
+
+# MEDIA_ROOT = '/'   # for local dev
+
+
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')    # for web dev
+
+STATIC_URL = 'static/'
+STATIC_ROOT = BASE_DIR / 'static/'
+
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, 'static/'),                             # for local dev, off on web
+#     os.path.join(BASE_DIR, 'seminar3/static/seminar3/'),
+#     os.path.join(BASE_DIR, 'seminar4/static/seminar4/'),
+# ]
