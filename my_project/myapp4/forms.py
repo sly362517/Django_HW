@@ -2,7 +2,7 @@ import datetime
 
 from django import forms
 
-from myapp2.models import Product
+from shop_app.models import Product
 class ProductFormWidget(forms.Form):
 
     name = forms.CharField(max_length=50, widget=forms.TextInput(

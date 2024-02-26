@@ -3,7 +3,7 @@ import logging
 from django.core.files.storage import FileSystemStorage
 from django.shortcuts import render
 from .forms import ProductFormWidget, ProductChoiceForm
-from myapp2.models import Product
+from shop_app.models import Product
 
 from django.shortcuts import redirect
 
