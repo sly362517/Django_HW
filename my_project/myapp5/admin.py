@@ -1,6 +1,6 @@
 
 from django.contrib import admin
-from myapp2.models import Product, Order, User
+from shop_app.models import Product, Order, User
 
 @admin.action(description="Сбросить количество в ноль")
 def reset_quantity(modeladmin, request, queryset):
