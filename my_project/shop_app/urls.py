@@ -10,5 +10,4 @@ urlpatterns = [
     path('user/<int:user_id>/', basket, name='basket'),
     path('user_sorted/<int:user_id>/<int:days_ago>/', sorted_basket, name='sorted_basket'),
 
-
 ]
